@@ -32,6 +32,20 @@ public class UserDaoTest {
         assertEquals(addUser.getPassword(),"Ng457");
         assertNotNull(addUser);
     }
+    @Test
+    public void testInsertUserIntoTableusernameNull()  {
+        log.info("Executing testInsertUserIntoTable()...");
+
+        User user1 = new User(8,"Ninad","null");
+        User addUser = null;
+        try {
+            addUser = userDao.insertUserIntoTable(user1);
+        } catch (SQLException e) {
+            assert true;
+        }
+
+
+    }
 
     @Test
     public void testGetAllUsers() {
